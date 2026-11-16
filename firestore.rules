@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ------------------------------------------------------------------
+    // PERFIS DE ACESSO
+    // Troque os textos entre aspas pelo UID de cada conta. O UID fica no
+    // Firebase em Authentication > Usuários, na coluna "UID do usuário".
+    // ------------------------------------------------------------------
+
+    // Perfil família: vê e lança para todos, inclusive para o Rhuan.
+    // Login compartilhado de Matheus e Paloma. Se alguém ganhar login próprio,
+    // acrescente o UID da nova conta nesta lista, separado por vírgula.
+    function familia() {
+      return request.auth != null
+        && request.auth.uid in ['noGjYEMytLdkMJ4xNzwjCBsASRf2'];
+    }
+
+    // Perfil do Rhuan: vê e lança só os lançamentos dele (pessoa "rhuan").
+    function rhuan() {
+      return request.auth != null
+        && request.auth.uid == 'IzEDOP7KELPoikPGZLqCU1mikr82';
+    }
+    function doRhuan(dados) {
+      return dados.pessoa == 'rhuan';
+    }
+
+    // Lançamentos avulsos e parcelas
+    match /lancamentos/{id} {
+      allow read, delete: if familia() || (rhuan() && doRhuan(resource.data));
+      allow create:       if familia() || (rhuan() && doRhuan(request.resource.data));
+      allow update:       if familia() || (rhuan() && doRhuan(resource.data) && doRhuan(request.resource.data));
+    }
+
+    // Lançamentos de todo mês
+    match /recorrentes/{id} {
+      allow read, delete: if familia() || (rhuan() && doRhuan(resource.data));
+      allow create:       if familia() || (rhuan() && doRhuan(request.resource.data));
+      allow update:       if familia() || (rhuan() && doRhuan(resource.data) && doRhuan(request.resource.data));
+    }
+
+    // Categorias: todos leem, só a família altera
+    match /config/{doc} {
+      allow read:  if familia() || rhuan();
+      allow write: if familia();
+    }
+
+    // Qualquer outra coisa fica bloqueada.
+  }
+}
