@@ -85,6 +85,17 @@ despesa, investimento e sobra. As setas mudam a janela de meses. A opção de es
 às despesas variáveis a média do que foi gasto nos últimos 3 meses. "Baixar planilha" gera o
 arquivo para abrir no Excel.
 
+## Pago e recebido
+Cada gasto e cada entrada tem um botão de "ok" na tabela de lançamentos: toque para marcar
+como pago ou recebido. Os cartões "Pagamentos" e "Recebimentos", no topo, mostram quanto já
+foi pago ou recebido no mês, quanto falta e as maiores contas pendentes. Nos lançamentos de
+todo mês, a marcação vale só para o mês aberto.
+
+## Filtros dos gráficos
+Toque em "Fixas" ou "Variáveis" no gráfico de despesas fixas e variáveis, ou numa categoria
+em "Para onde foram os gastos" e "Gastos por categoria", para filtrar os gráficos e a tabela.
+Toque de novo, ou em "Limpar filtro", para voltar.
+
 ## Despesa fixa ou variável
 Cada gasto é marcado como fixo ou variável. O que repete todo mês já vem como fixo e o resto
 como variável, mas dá para trocar. O gráfico "Despesas fixas e variáveis" mostra quanto
@@ -96,7 +107,7 @@ já tem lançamentos.
 
 ## Atualizar o app depois
 Substitua os arquivos no GitHub. Se mudar o `index.html`, aumente o número em `sw.js`
-(`financas-v7` → `financas-v8`) para os aparelhos pegarem a versão nova.
+(`financas-v8` → `financas-v9`) para os aparelhos pegarem a versão nova.
 
 ## Arquivos
 - `index.html`: o app.
