@@ -1,6 +1,6 @@
 // Service worker: deixa o app abrir rápido e funcionar sem internet.
 // Ao publicar uma nova versão dos arquivos, aumente o número abaixo.
-const CACHE = "financas-v8";
+const CACHE = "financas-v9";
 const SHELL = [
   "./", "./index.html", "./config.js", "./manifest.json",
   "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png", "./icons/favicon.png"

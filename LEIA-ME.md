@@ -96,6 +96,38 @@ Toque em "Fixas" ou "Variáveis" no gráfico de despesas fixas e variáveis, ou 
 em "Para onde foram os gastos" e "Gastos por categoria", para filtrar os gráficos e a tabela.
 Toque de novo, ou em "Limpar filtro", para voltar.
 
+## Calculadora no valor
+O botão de calculadora ao lado do valor abre um teclado com as quatro operações. Dá também para
+digitar a conta direto no campo (ex.: `120+35,50` ou `89,90x3`); o Enter calcula e o "Usar"
+coloca o resultado no campo.
+
+## Vencimento e previsão de recebimento
+Abaixo da descrição fica a data de vencimento (gastos) ou a previsão de recebimento (entradas).
+Nos lançamentos de todo mês e nas parcelas vale o dia, repetido nos outros meses. Na tabela e
+nos cartões de pagamentos aparece "Vence", e em vermelho "Vencida" ou "Atrasada" quando a data
+passou e o lançamento ainda não foi marcado como pago ou recebido.
+
+## Qual cartão
+No gasto com cartão de crédito dá para dizer qual é o cartão (um nome por fatura, ex.:
+"Nubank Paloma"). O painel mostra a soma do cartão no mês separada por cartão; toque num cartão
+para filtrar os gráficos e a tabela. Lançamentos antigos sem o nome aparecem como
+"Sem cartão definido" e podem ser editados para receber o nome.
+
+## Em aberto
+Na tabela de lançamentos, "Em aberto" mostra só o que falta pagar ou receber, do vencimento
+mais próximo para o mais distante. Os cartões "Pagamentos" e "Recebimentos" têm um atalho
+para essa lista.
+
+## Já investido
+A carteira mostra quanto cada um já tem investido até o fim do mês aberto. O lápis ao lado de
+cada nome informa o saldo inicial (quanto já estava investido antes de um mês); dali em diante
+cada investimento lançado vai somando. Para atualizar o saldo com rendimentos, edite o saldo
+inicial e escolha um mês mais recente.
+
+## Cópia de segurança
+Em Configurações, "Baixar cópia de segurança" gera um arquivo com todos os lançamentos do jeito
+que estão salvos. Vale guardar uma cópia de tempos em tempos.
+
 ## Despesa fixa ou variável
 Cada gasto é marcado como fixo ou variável. O que repete todo mês já vem como fixo e o resto
 como variável, mas dá para trocar. O gráfico "Despesas fixas e variáveis" mostra quanto
@@ -107,7 +139,7 @@ já tem lançamentos.
 
 ## Atualizar o app depois
 Substitua os arquivos no GitHub. Se mudar o `index.html`, aumente o número em `sw.js`
-(`financas-v8` → `financas-v9`) para os aparelhos pegarem a versão nova.
+(`financas-v9` → `financas-v10`) para os aparelhos pegarem a versão nova.
 
 ## Arquivos
 - `index.html`: o app.
